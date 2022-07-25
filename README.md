@@ -1,61 +1,80 @@
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gomah/bluise)
+<p align="center">
+    <img width="250"
+        src="./images/tawk-react-logo.png"
+        alt="Tawk React logo">
+</p>
 
-# Bluise - A Nuxt.js & Netlify CMS boilerplate.
+<br/>
 
-I wanted to explore Netlify CMS & Tailwind CSS, ended up creating this boilerplate.
+## Features
+* Using React Hooks
+* Documented and self-explaining methods
+* Small size without any external libraries
+* All Javascript API methods are available
+* Maintained by the [tawk.to](https://www.tawk.to/) team.
 
-So far we've got:
+<br/>
 
-- Blog w/ posts, including pagination.
-- Configurable manifest & global settings.
-- CSS Markdown (Thanks to [https://github.com/iandinwoodie/github-markdown-tailwindcss/blob/master/markdown.css]).
-- Dynamic pages.
-- PWA ready.
-- SEO ready for posts & pages.
-- Signup form (using Netlify Forms).
-- Tools (Commitlint, Husky).
-- Typescript.
-
-Few things I'd like to add in the future:
-
-- Contact form under \_slug.
-- Dynamic sections/widgets.
-- Responsive CSS markdown.
-- Tests
-
-## Quickstart
-
-### Prerequisites
-
-- [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-tab)
-- [Node.js](https://nodejs.org/en/)
-
+## Installation
+The plugins are available from the node and yarn package managers.
 ```bash
-# ensure you have the prerequisites
-# install
-brew install node && brew install yarn
+# Node
+npm install @tawk.to/tawk-messenger-react
 
-# OR update
-brew update && brew upgrade && brew install yarn
-
-# install dependencies
-yarn install
-
-# serve with hot reload at localhost:3000
-yarn dev
-
-# build for production with minification
-yarn generate
-
-# run all tests
-yarn test
+# Yarn
+yarn add @tawk.to/tawk-messenger-react
 ```
 
-### Using Netlify CMS
+<br/>
 
-1. Deploy to Netlify.
-2. Enable Identity under Settings.
-3. Configure registration preferences & external providers if needed.
-4. Enable Git Gateway.
+## Quickstart
+Import **tawk-messenger-react** into the App.js file of your **src/** folder. The **propertyId** and **widgetId** will
+be found on your tawk Dashboard.
 
-_Note: You'll need to specify the Netlify URL when browsing the admin page locally._
+Log in to your account and go to **Administration > Channels > Chat Widget**.
+
+When using the API, you will need to use the **useRef** to access the object functions from the **tawk-messenger-react** component.
+
+```js
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+
+function App() {
+    return (
+        <div className="App">
+            <TawkMessengerReact
+                propertyId="property_id"
+                widgetId="default"/>
+        </div>
+    );
+}
+```
+
+<br/>
+
+## Documentation
+This project includes a `docs` folder with more details on the following:
+1.  [How to Use](docs/how-to-use.md)
+1.  [API Reference](docs/api-reference.md)
+
+<br/>
+
+## Other JS frameworks we support
+- [Vue Js](https://github.com/tawk/tawk-messenger-vue)
+- [Angular Js](https://github.com/tawk/tawk-messenger-angular)
+- [Ember Js](https://github.com/tawk/tawk-messenger-ember)
+
+<br/>
+
+## Frequently Asked Questions
+
+**Do you have a knowledge base or article to support implementation?**
+
+Here is our guide for the [React.js integration](https://help.tawk.to/article/react-js )
+
+**Where can I find more information and support?**
+
+Visit our [help center](https://help.tawk.to) or reach out in the chat on our [website](https://tawk.to). Our agents are available to assist you 24/7.
+
+**Where can I submit a suggestion or report a bug?**
+
+Check to see if the issue already exists. If not, open a new issue in the [Issues tab](https://github.com/tawk/tawk-messenger-vue/issues)

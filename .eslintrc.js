@@ -1,70 +1,47 @@
 module.exports = {
-  root: true,
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-    project: './tsconfig.json',
-    extraFileExtensions: ['.vue'],
-  },
-  env: {
-    browser: true,
-    jest: true,
-    node: true,
-  },
-  extends: [
-    'airbnb-typescript/base',
-    'plugin:vue-a11y/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:vue/strongly-recommended',
-    'prettier',
-    'prettier/vue',
-    'prettier/@typescript-eslint',
-  ],
-  plugins: ['@typescript-eslint', 'vue-a11y', 'prettier', 'vue'],
-  // add your custom rules here
-  rules: {
-    'prettier/prettier': ['error', { singleQuote: true, trailingComma: 'es5', printWidth: 100 }],
-    'import/extensions': [
-      'error',
-      'always',
-      {
-        js: 'never',
-        ts: 'never',
-      },
-    ],
-    'no-console': 0,
-    '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/no-var-requires': 0,
-    'import/no-dynamic-require': 0,
-    'global-require': 0,
-    'no-underscore-dangle': 0,
-    'class-methods-use-this': 0,
-    'vue/max-attributes-per-line': 'off',
-    'vue/component-name-in-template-casing': [1, 'kebab-case'],
-  },
-  settings: {
-    'import/core-modules': [
-      '@nuxt/config',
-      '@nuxt/vue-app',
-      '@nuxt/types',
-      'purgecss-webpack-plugin',
-      'vue',
-      'vuex',
-      'vue-meta',
-      'vue-server-renderer',
-      'vue-router',
-    ],
-    'import/resolver': {
-      webpack: {
-        config: {
-          resolve: {
-            extensions: ['.js', '.json', '.ts', '.vue'],
-            alias: {
-              '~': __dirname + '/app',
-              '@': __dirname + '/app',
-            },
-          },
-        },
-      },
-    },
-  },
+	root : true,
+	env : {
+		node : true,
+		jest : true,
+		es2020 : true
+	},
+	extends : [
+		'plugin:react/recommended',
+		'plugin:react/jsx-runtime',
+		'eslint:recommended'
+	],
+	ignorePatterns : ['/dist/**'],
+	rules : {
+		'no-console' : ['error', { allow : ['warn', 'error'] }],
+		'no-debugger' : 'error',
+		'no-var' : 'off',
+		semi : ['error', 'always'],
+		indent : [1, 'tab'],
+		'space-before-function-paren' : [
+			'warn',
+			{
+				anonymous : 'always',
+				named : 'never'
+			}
+		],
+		'key-spacing' : [
+			'warn',
+			{
+				beforeColon : true
+			}
+		],
+		'operator-linebreak' : ['error', 'after'],
+		'no-nested-ternary' : 'error',
+		quotes : ['error', 'single'],
+		'arrow-parens' : ['error', 'always'],
+		'react/jsx-uses-react' : 'off',
+		'react/react-in-jsx-scope' : 'off',
+		'no-redeclare' : 'off'
+	},
+	settings : {
+		react : {
+			version : 'detect'
+		}
+	},
+	parser : 'babel-eslint'
 };
